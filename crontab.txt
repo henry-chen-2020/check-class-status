@@ -1,0 +1,1 @@
+* * * * * ~/ada/check-class-status/everything.py < ~/ada/check-class-status/watch1.txt
