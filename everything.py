@@ -15,6 +15,9 @@ pretty = json.dumps(data, indent = 4)
 res = "nope"
 
 if data["waitlistedCount"] < data["maxWaitlist"]:
-	res = "There are " + str(data["maxWaitlist"] - data["waitlistedCount"]) + " spots on the waitlist."
+    spots = data["maxWaitlist"] - data["waitlistedCount"]
+    res = "There are {} spots on the waitlist.".format(spots)
+else:
+    res = "Class full at {}".format(data["maxWaitlist"])
 	
 selfsend.sendemail(address, "Update on classID " + str(output), res, "is.testingscripts@gmail.com", "Lower05!")
